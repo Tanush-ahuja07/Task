@@ -3,7 +3,8 @@ import {
   getNotes,
   createNote,
   updateNote,
-  deleteNote
+  deleteNote,
+  enhanceNoteWithAI
 } from "../controllers/noteController.js";
 import { noteSchema } from "../validation/notesSchema.js";
 import authMiddleware from "../middleware/authMiddleware.js";
@@ -18,6 +19,9 @@ router.route("/")
 router.route("/:id")
   .patch(authMiddleware, isValidate(noteSchema), updateNote)
   .delete(authMiddleware, deleteNote);
+
+router.route("/:id/ai/enhance")
+  .post(authMiddleware, enhanceNoteWithAI);
 
 export default router;
 
