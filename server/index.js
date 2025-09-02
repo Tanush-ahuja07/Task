@@ -21,6 +21,10 @@ app.use(cors());
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the Task Manager API");
+});
+
 // Routes
 app.use("/api/users", userRoutes);
 app.use("/api/notes", noteRoutes);
