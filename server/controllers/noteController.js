@@ -1,5 +1,5 @@
 
-import Note from "../models/Note.js";
+import Note from "../models/note.js";
 import { enhanceContent } from "../utils/geminiService.js";
 
 // GET /notes 

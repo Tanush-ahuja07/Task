@@ -1,5 +1,5 @@
 
-import Todo from "../models/Todo.js";
+import Todo from "../models/todo.js";
 
 // GET /todos → List all todos for logged-in user
 export const getTodos = async (req, res, next) => {
